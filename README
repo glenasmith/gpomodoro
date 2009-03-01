@@ -1,0 +1,4 @@
+
+A very simple Pomodoro timer written in Griffon.
+
+Counts down from 25 minutes. Stops at 0. No config options :-)
