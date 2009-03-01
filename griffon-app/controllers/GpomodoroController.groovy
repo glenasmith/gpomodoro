@@ -15,7 +15,7 @@ class GpomodoroController {
 	            model.startLabel = "Stop";
 				Calendar finishCal = Calendar.getInstance();
 	            if (model.finishTime == 0) {  // fresh timer	               
-	               finishCal.add(Calendar.SECOND, 5);
+	               finishCal.add(Calendar.MINUTE, 25);
 				} else {  // previously paused timer
 					// Calendar only accepts ints to add...
 				   int newDurationSecs = (model.finishTime - model.pauseTime) / 1000
