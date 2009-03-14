@@ -1,5 +1,4 @@
-application(title:'gpomodoro',  /*size:[320,480], location:[50,50],*/ pack:true, locationByPlatform:true) {
-    // add content here
+application(title:'gpomodoro', pack:true, locationByPlatform:true) {
 	panel() {
 		borderLayout()
 		panel(constraints: CENTER) {

@@ -24,12 +24,16 @@ class GpomodoroController {
 	            model.finishTime = finishCal.getTimeInMillis();	            
 	            model.timer = new java.util.Timer()
 				def myTask = {
+					int minutes
+					int seconds
 					long millis = model.finishTime - System.currentTimeMillis()
-		            int seconds = (int)(millis/1000)
-		            int minutes = seconds/60
-		            seconds = seconds % 60
-					if (minutes < 0) minutes = 0
-					if (seconds < 0) seconds = 0
+					if (millis > 0) {
+		            	seconds = (int)(millis/1000)
+		            	minutes = seconds/60
+		            	seconds = seconds % 60
+					} else {
+						minutes = seconds = 0
+					}
 		            model.timeRemaining = String.format("%d:%02d", minutes, seconds)
 				}
 	            model.timer.schedule(myTask as TimerTask, 200, 200)
